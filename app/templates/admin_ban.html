@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Admin Ban</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.email }}</td>
+                    <td>{{ "Active" if user.active else "Banned" }}</td>
+                    <td>
+                        <form method="post">
+                            <input type="hidden" name="user_id" value="{{ user.id }}">
+                            {% if user.active %}
+                                <button type="submit" name="ban_action" value="ban">Ban</button>
+                            {% else %}
+                                <button type="submit" name="ban_action" value="unban">Unban</button>
+                            {% endif %}
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

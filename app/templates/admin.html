@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Admin Panel</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.email }}</td>
+            <td>{{ user.roles[0].name if user.roles else 'Pending' }}</td>
+            <td>
+                <form method="POST" action="{{ url_for('update_role') }}" onsubmit="return confirmRoleChange()">
+                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                    <select name="new_role">
+                        <option value="Role1" {% if user.roles and user.roles[0].name == 'Role1' %}selected{% endif %}>Role1</option>
+                        <option value="Role2" {% if user.roles and user.roles[0].name == 'Role2' %}selected{% endif %}>Role2</option>
+                        <option value="Role3" {% if user.roles and user.roles[0].name == 'Role3' %}selected{% endif %}>Role3</option>
+                        <option value="Admin" {% if user.roles and user.roles[0].name == 'Admin' %}selected{% endif %}>Admin</option>
+                    </select>
+                    <button type="submit">Update Role</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+function confirmRoleChange() {
+    if (confirm("Are you sure you want to change the user's role?")) {
+        var selectedRole = document.querySelector('select[name="new_role"]').value;
+        if (selectedRole === "Admin") {
+            return confirm("This user will become a full administrator of the system. Are you sure?");
+        }
+        return true;
+    }
+    return false;
+}
+</script>
+{% endblock %}

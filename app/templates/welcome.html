@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome</h1>
+<p>Available GET requests:</p>
+<ul>
+{% for get in allowed_gets %}
+  <li>{{ get }}</li>
+{% endfor %}
+</ul>
+
+<form action="{{ url_for('welcomeresource') }}" method="post">
+  <label for="playbook_name">Select GET request to execute:</label>
+  <select name="playbook_name" id="playbook_name">
+  {% for get in allowed_gets %}
+    <option value="{{ get }}">{{ get }}</option>
+  {% endfor %}
+  </select><br><br>
+
+  <input type="checkbox" name="send_email" id="send_email">
+  <label for="send_email">Send output via email</label><br><br>
+
+  <input type="submit" value="Execute GET Request">
+</form>
+
+{% if output %}
+  <h2>Output:</h2>
+  <pre>{{ output }}</pre>
+{% endif %}
+{% endblock %}

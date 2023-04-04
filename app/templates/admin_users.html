@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Admin - Users</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Token</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.roles|join(', ') }}</td>
+            <td>{{ user.token }}</td>
+            <td>{{ user.active }}</td>
+            <td>
+                <form action="{{ url_for('api.adminusers') }}" method="post">
+                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                    <input type="hidden" name="action" value="reset_token">
+                    <button type="submit">Reset Token</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
