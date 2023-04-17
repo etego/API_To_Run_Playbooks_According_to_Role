@@ -43,7 +43,7 @@ This project demonstrates a scalable Flask-RESTful API with user roles, authenti
 -- Logging of user actions for security monitoring and auditing purposes.
 
 ## Content
-.
+.<br/>
 ├── app<br/>
 │   ├── __init__.py<br/>
 │   ├── models.py<br/>
