@@ -44,36 +44,36 @@ This project demonstrates a scalable Flask-RESTful API with user roles, authenti
 
 ## Content
 .
-├── app
-│   ├── __init__.py
-│   ├── models.py
-│   ├── playbooks.py
-│   ├── email.py
-│   ├── resources.py
-│   ├── routes.py
-│   └── templates
-│       ├── base.html
-│       ├── login.html
-│       ├── register.html
-│       └── welcome.html
-├── config.py
-├── db_create.py
-├── requirements.txt
-├── run.py
-└── README.md
-
-__init__.py: This file initializes the Flask app, the database, and Flask-JWT-Extended.
-models.py: Contains the database models for User and Role.
-playbooks.py: Contains the functions to execute Ansible playbooks.
-email.py: Contains functions for sending emails.
-resources.py: Contains the Flask-RESTful resources for handling login, registration, and the welcome page.
-routes.py: Configures the routes for the app's resources.
-templates: Contains the HTML templates for the login, registration, and welcome pages.
-config.py: Contains the configuration settings for the Flask app.
-db_create.py: Script to create the database and an admin user.
-requirements.txt: Lists the required Python packages for the project.
-run.py: The main script to run the Flask app.
-README.md: Provides a brief explanation of the project, its setup, and usage.
+├── app<br/>
+│   ├── __init__.py<br/>
+│   ├── models.py<br/>
+│   ├── playbooks.py<br/>
+│   ├── email.py<br/>
+│   ├── resources.py<br/>
+│   ├── routes.py<br/>
+│   └── templates<br/>
+│       ├── base.html<br/>
+│       ├── login.html<br/>
+│       ├── register.html<br/>
+│       └── welcome.html<br/>
+├── config.py<br/>
+├── db_create.py<br/>
+├── requirements.txt<br/>
+├── run.py<br/>
+└── README.md<br/>
+<br/>
+__init__.py: This file initializes the Flask app, the database, and Flask-JWT-Extended.<br/>
+models.py: Contains the database models for User and Role.<br/>
+playbooks.py: Contains the functions to execute Ansible playbooks.<br/>
+email.py: Contains functions for sending emails.<br/>
+resources.py: Contains the Flask-RESTful resources for handling login, registration, and the welcome page.<br/>
+routes.py: Configures the routes for the app's resources.<br/>
+templates: Contains the HTML templates for the login, registration, and welcome pages.<br/>
+config.py: Contains the configuration settings for the Flask app.<br/>
+db_create.py: Script to create the database and an admin user.<br/>
+requirements.txt: Lists the required Python packages for the project.<br/>
+run.py: The main script to run the Flask app.<br/>
+README.md: Provides a brief explanation of the project, its setup, and usage.<br/>
 
 ## Requirements
 
@@ -85,13 +85,13 @@ README.md: Provides a brief explanation of the project, its setup, and usage.
 
 1. Install dependencies:
 
-Flask: The main framework for building the web application.
-Flask-RESTful: An extension for building RESTful APIs with Flask.
-Flask-SQLAlchemy: An extension for using SQLAlchemy with Flask to interact with the database.
-Flask-Security-Too: An extension providing security features such as user authentication, registration, and role management.
-Flask-Admin: An extension for creating an admin interface for managing users and roles.
-Flask-Mail: An extension for sending emails using the Flask framework.
-passlib: A library for password hashing and verification.
+Flask: The main framework for building the web application.<br/>
+Flask-RESTful: An extension for building RESTful APIs with Flask.<br/>
+Flask-SQLAlchemy: An extension for using SQLAlchemy with Flask to interact with the database.<br/>
+Flask-Security-Too: An extension providing security features such as user authentication, registration, and role management.<br/>
+Flask-Admin: An extension for creating an admin interface for managing users and roles.<br/>
+Flask-Mail: An extension for sending emails using the Flask framework.<br/>
+passlib: A library for password hashing and verification.<br/>
 
 ```
 pip install -r requirements.txt
