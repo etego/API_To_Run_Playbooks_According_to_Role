@@ -52,10 +52,10 @@ This project demonstrates a scalable Flask-RESTful API with user roles, authenti
 │   ├── resources.py<br/>
 │   ├── routes.py<br/>
 │   └── templates<br/>
-│         ├── base.html<br/>
-│         ├── login.html<br/>
-│         ├── register.html<br/>
-│         └── welcome.html<br/>
+│     |── base.html<br/>
+│     |── login.html<br/>
+│     |── register.html<br/>
+│     |── welcome.html<br/>
 ├── config.py<br/>
 ├── db_create.py<br/>
 ├── requirements.txt<br/>
